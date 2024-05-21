@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    /* Styles di sini */
+  </style>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css'>
+</head>
+<body class="flex flex-col items-center justify-center w-screen h-screen bg-gray-200 text-gray-700">
+
+  <!-- Component Start -->
+  <h1 class="font-bold text-2xl">EduSkor</h1>
+  <form id="loginForm" class="flex flex-col bg-white rounded shadow-lg p-12 mt-12" action="">
+    <label class="font-semibold text-xs" for="usernameField">Username</label>
+    <input id="usernameField" class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="text">
+    <label class="font-semibold text-xs mt-3" for="passwordField">Password</label>
+    <input id="passwordField" class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="password">
+    <button id="loginButton" class="flex items-center justify-center h-12 px-6 w-64 bg-blue-600 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700">Login</button>
+    <div class="flex mt-6 justify-center text-xs">
+      <a class="text-blue-400 hover:text-blue-500" href="#">Forgot Password</a>
+    </div>
+  </form>
+  <!-- Component End  -->
+
+  <script>
+    // Mengambil elemen formulir dan tombol login
+    const loginForm = document.getElementById('loginForm');
+    const loginButton = document.getElementById('loginButton');
+    const usernameField = document.getElementById('usernameField');
+    const passwordField = document.getElementById('passwordField');
+
+    // Menambahkan event listener untuk tombol login
+    loginButton.addEventListener('click', function(event) {
+      event.preventDefault(); // Mencegah pengiriman formulir secara default
+
+      // Mengambil nilai username dan password
+      const username = usernameField.value;
+      const password = passwordField.value;
+
+      // Persyaratan login: username harus "admin" dan password harus "admin123"
+      if (username.trim() === 'admin' && password.trim() === 'admin123') {
+        // Login berhasil
+        alert('Selamat datang, admin!');
+        // Di sini Anda bisa melakukan tindakan setelah login berhasil
+      } else {
+        // Login gagal
+        alert('Username atau password salah!');
+        // Menghapus nilai username dan password
+        usernameField.value = '';
+        passwordField.value = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
