@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  .unand
+    .container.mx-auto.mt-5
+      h2.text-3xl Nilai Mahasiswa
+      .container.mx-auto.mt-8.bg-blue-950
+        details.dropdown.dropdown-end
+          summary.m-1.btn.btn-rounded.rounded-full Mata Kuliah
+          ul.p-2.shadow.menu.dropdown-content(class="z-1 bg-base-100")
+            li
+              a Perancangan Basis Data
+            li
+              a Pemrograman Web
+        details.dropdown.mr-80
+          summary.m-1.btn.btn-rounded.rounded-full Kelas
+          ul.p-2.shadow.menu.dropdown-content(class="z-1 bg-base-100")
+            li
+              a A
+            li
+              a B
+        button.btn.ml-96 Edit Bobot Nilai
+        button.btn.ml-3 Simpan
+      .mt-5.overflow-x-auto
+        table.table
+          thead
+            tr
+              th No
+              th NIM
+              th Nama
+              th Absensi
+              th Tugas/Kuis
+              th UTS
+              th UAS
+          tbody
+            each val, index in ['Muhammad Harsya', 'Muhammad Harsya', 'Muhammad Harsya']
+              tr.hover
+                th= index + 1
+                td 2211521005
+                td= val
+                td -
+                td -
+                td -
+                td -

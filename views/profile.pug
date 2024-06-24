@@ -1,0 +1,29 @@
+
+extends layout
+
+block content
+  form(method="POST" action="/profile" class="mt-4")
+    .container.mx-auto
+      .header
+        .flex.justify-between.items-center.mb-3.px-2.py-2
+          h1.text-xl.font-bold Edit Profil
+          a(href="#").text-white Dashboard/Admin
+        hr
+      .table-container.mt-4
+        .flex.justify-between.items-center.mb-3.bg-blue-950.px-2.py-2.rounded
+          h1.text-white.text-xl.font-bold Edit
+      .px-2.py-2.bg-blue-950.rounded-lg
+        .flex.justify-between.items-center.mb-3.bg-blue-950.px-2.py-2
+          label.text-white.mr-10 Username:
+          input#newUsername.w-full.ml-10.rounded.px-2.py-2(type="text" placeholder="New Username" style="width:50%" name="newUsername" value= user.username)
+        .flex.justify-between.items-center.mb-3.bg-blue-950.px-2.py-2
+          label.text-white.mr-10 Email:
+          input#newEmail.w-full.ml-10.rounded.px-2.py-2(type="email" placeholder="New Email" style="width:50%" name="newEmail" value= user.email)
+        .flex.justify-between.items-center.mb-3.bg-blue-950.px-2.py-2
+          label.text-white.mr-10 Password:
+          input#newPassword.w-full.ml-10.rounded.px-2.py-2(type="password" placeholder="New Password" style="width:50%" name="newPassword")
+    .container.mx-auto.mt-5 
+            button.bg-blue-950.text-white.px-4.py-2.rounded.mt-4(type="submit") Tambah
+            button.bg-blue-950.text-white.px-4.py-2.rounded.mt-4.mx-5(type="submit") Hapus
+            button.bg-blue-950.text-white.px-4.py-2.rounded.mt-4.mx-5(type="submit") Selesai
+           
