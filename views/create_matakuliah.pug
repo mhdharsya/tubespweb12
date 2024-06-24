@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+  form(method="POST" action="/matkul")
+    .container.mx-auto.mt-5
+      .header
+        .flex.justify-between.items-center.mb-3.px-2.py-2
+          h1.text-xl.font-bold Edit Mata Kuliah
+          a(href="#").text-white Dashboard/Admin
+        hr
+      .table-container.mt-4
+        .flex.justify-between.items-center.mb-3.bg-blue-950.px-2.py-2.rounded
+          h1.text-white.text-xl.font-bold Edit
+      .px-2.py-2.bg-blue-950.rounded-lg
+        .flex.justify-between.items-center.mb-3.bg-blue-950.px-2.py-2
+          label.text-white.mr-10 Kode Mata Kuliah:
+          input#kode_matkul.w-full.ml-10.rounded.px-2.py-2(type="text" placeholder="Kode Mata Kuliah" style="width:50%" name="kode_matkul")
+        .flex.justify-between.items-center.mb-3.bg-blue-950.px-2.py-2
+          label.text-white.mr-10 Mata Kuliah:
+          input#matkul.w-full.ml-10.rounded.px-2.py-2(type="text" placeholder="Mata Kuliah" style="width:50%" name="matkul")
+        .flex.justify-between.items-center.mb-3.bg-blue-950.px-2.py-2
+          label.text-white.mr-10 Kelas:
+          input#kelas.w-full.ml-10.rounded.px-2.py-2(type="text" placeholder="Kelas" style="width:50%" name="kelas")
+        .flex.justify-between.items-center.mb-3.bg-blue-950.px-2.py-2
+          label.text-white.mr-10 Dosen Pengampu:
+          input#dosen.w-full.ml-10.rounded.px-2.py-2(type="text" placeholder="Dosen Pengampu" style="width:50%" name="dosen")
+        .flex.justify-between.items-center.mb-3.bg-blue-950.px-2.py-2
+          label.text-white.mr-10 Jumlah Mahasiswa:
+          input#jumlah_mahasiswa.w-full.ml-10.rounded.px-2.py-2(type="number" placeholder="Jumlah Mahasiswa" style="width:50%" name="jumlah_mahasiswa")
+    .container.mx-auto.mt-5 
+        button.bg-blue-950.text-white.px-4.py-2.rounded.mt-4(type="submit") Tambah
+        button.bg-blue-950.text-white.px-4.py-2.rounded.mt-4.mx-5(type="submit") Hapus
+        button.bg-blue-950.text-white.px-4.py-2.rounded.mt-4.mx-5(type="submit") Selesai

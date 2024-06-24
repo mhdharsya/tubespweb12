@@ -1,7 +1,83 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
+        script(src="https://cdn.tailwindcss.com")
+        title Home
+    body
+    <html data-theme="light"></html>
+    <div class='container-none mx-auto'>
+    <div class='container-none mx-auto'>  
+        <div class="navbar shadow-xl bg-blue-950">
+        <div class="drawer z-[100]">
+        <input id="my-drawer" type="checkbox" class="drawer-toggle show"/>
+        <div class="flex flex-row drawer-content">
+            <label for="my-drawer" class="btn btn-square btn-ghost">
+            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+            </label>
+
+            <div class="border" style="border:1px solid white">
+                <button id='eduskor' class="btn btn-ghost text-xl text-white">Tahun Ajaran 2023/2024</button>
+                <p class="text-lg text-white mx-5">Semester Ganjil</p>
+            </div>
+        </div>
+
+        <div class="drawer-side">
+            <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+            <ul class="menu p-4 w-52 min-h-full bg-blue-950 text-base-content">
+            <a class='ml-3 mb-2 font-bold text-3xl'><img style="width: 80px; height: auto;" src="/unand.png" alt="Unand"></a>
+            <li><a style="color: white;" href="/home">Dashboard</a></li>
+            <li><a style="color: white;" href="/profile">Profile</a></li>
+            <li><a style="color: white;" href="/Nilai">Nilai</a></li>
+
+            <li><a style="color: white;" href="/matkul">Mata Kuliah</a></li>
+            <li><a style="color: white;" href="/mahasiswa">Mahasiwa</a></li>
+
+            <li><a style="color: white;" href="/bantuan">Kritik dan Saran</a></li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+            <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            </div>
+        </div>
+
+        <ul tabindex="0" class="z-[100] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+            <li><button id="profileButton">Profil</button></li>
+            <li><button id="changePasswordButton">Ubah Password</button></li>
+            <li><button id="logoutButton">Logout</button></li>
+        </ul>
+        </div>
+    </div>
+    
+    block content 
+script.
+  const searchInput = document.getElementById('searchInput');
+  const dataTable = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+  const rows = dataTable.getElementsByTagName('tr');
+
+  searchInput.addEventListener('keyup', function() {
+    const searchText = searchInput.value.toLowerCase();
+    Array.from(rows).forEach(function(row) {
+      const cells = row.getElementsByTagName('td');
+      let found = false;
+      for (let i = 0; i < cells.length; i++) {
+        const cellText = cells[i].textContent || cells[i].innerText;
+        if (cellText.toLowerCase().includes(searchText)) {
+          found = true;
+          break;
+        }
+      }
+      if (found) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  });

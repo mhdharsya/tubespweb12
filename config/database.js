@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-const db = new Sequelize('tubespweb12', 'root', '', {
+const db = new Sequelize('database_development', 'root', '', {
     host: "localhost",
     dialect: "mysql"
 });
